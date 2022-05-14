@@ -59,6 +59,9 @@ travis-deploy:
 
 clean: clean-api-docs
 	@echo "Cleaning the build..."
+	@rm -rf _build
+	@rm -rf .elixir_ls
+	@rm -rf deps
 
 watch:
 	@make build
