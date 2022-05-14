@@ -57,7 +57,7 @@ travis-deploy:
 	@echo "Deploy the software by travis"
 	@make release
 
-clean: clean-api-docs
+clean:
 	@echo "Cleaning the build..."
 	@rm -rf _build
 	@rm -rf .elixir_ls

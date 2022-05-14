@@ -54,10 +54,6 @@ defmodule OcapRpc.MixProject do
       {:exth_crypto, "~> 0.1"},
       {:ex_rlp, "~> 0.5.1"},
 
-      # logger and sentry
-      {:logger_sentry, "~> 0.2"},
-      {:sentry, "~> 7.0"},
-
       # utility belt
       {:utility_belt, "~> 0.16"},
 
