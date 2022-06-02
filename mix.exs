@@ -38,7 +38,7 @@ defmodule OcapRpc.MixProject do
     [
       # convert
       {:atomic_map, "~> 0.9"},
-      {:decimal, "~> 1.6"},
+      {:decimal, "~> 2.0"},
       {:hexate, ">= 0.6.0"},
       {:proper_case, "~> 1.3"},
       {:recase, "~> 0.6"},
