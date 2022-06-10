@@ -4,11 +4,12 @@ defmodule OcapRpc.Internal.CmtRpc do
   """
   use Tesla
   require Logger
+  alias OcapRpc.Internal.Utils
 
   # plug(Tesla.Middleware.Retry, delay: 500, max_retries: 3)
 
   @headers [{"content-type", "application/json"}]
-  @timeout :ocap_rpc |> Application.get_env(:cmt) |> Keyword.get(:timeout)
+  @timeout Utils.get_timeout(:cmt)
 
   plug(Tesla.Middleware.Headers, @headers)
 
@@ -18,8 +19,7 @@ defmodule OcapRpc.Internal.CmtRpc do
   end
 
   def call(method, args) do
-    %{hostname: hostname, port: port} =
-      :ocap_rpc |> Application.get_env(:cmt) |> Keyword.get(:conn)
+    %{hostname: hostname, port: port} = Utils.get_connection(:cmt)
 
     body = get_body(method, args)
     # Logger.debug("Cybermiles RPC request for: #{inspect(body)}}")

@@ -1,3 +1,6 @@
+## 0.15.3 (Jun 10, 2022)
+  - Allow users not to put configs for all chains in their config.exs
+
 ## 0.15.2 (December 30, 2019)
   - Make sure the RPC return nil if the tx is not persisted on chain.
 
