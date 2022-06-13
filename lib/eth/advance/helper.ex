@@ -74,7 +74,7 @@ defmodule OcapRpc.Internal.EthTransaction.Helper do
     # when computing the hash of a transaction for purposes of signing or recovering,
     # instead of hashing only the first six elements (ie. nonce, gasprice, startgas, to, value, data),
     # hash nine elements, with v replaced by CHAIN_ID, r = 0 and s = 0
-    chain_id = Utils.get_chain_id() |> IO.inspect(label: "chain_id")
+    chain_id = Utils.get_chain_id()
 
     nonce
     |> new_transaction(gas_price, gas_limit, to, value, input, chain_id, 0, 0)
